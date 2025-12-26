@@ -1,38 +1,154 @@
-# sv
+# HanziDeck
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A lightweight Chinese vocabulary flashcard web app focused on fast review, repetition, and retention.  
+Built with **SvelteKit**, **Vite**, and **Tailwind CSS**.
 
-## Creating a project
+The goal is a no-friction study tool for Mandarin learners:
+- Quick sessions
+- Minimal UI
+- Keyboard- and mobile-friendly
+- Works well as a PWA later if desired
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Features (Current / Planned)
 
-# create a new project in my-app
-npx sv create my-app
+- Flashcard-style vocabulary review
+- Chinese characters + pinyin + English
+- Simple reveal / flip interaction
+- Progress through decks
+- Clean, distraction-free UI
+
+Planned:
+- HSK-based decks
+- Spaced repetition
+- Offline support
+- Import/export word lists
+- Mobile-first optimizations
+
+---
+
+## Tech Stack
+
+- **SvelteKit** – app framework
+- **Vite** – dev server & bundler
+- **Tailwind CSS** – styling
+- **PostCSS** – CSS processing
+- **Node.js** – runtime
+
+---
+
+## Project Structure
+
+HanziDeck/  
+├─ src/  
+│ ├─ routes/  
+│ │ ├─ \+layout.svelte  
+│ │ ├─ \+page.svelte  
+│ │ └─ layout.css  
+│ ├─ lib/  
+│ │ └─ components/  
+│ └─ app.html  
+├─ static/  
+├─ postcss.config.cjs  
+├─ tailwind.config.js  
+├─ vite.config.js  
+├─ package.json  
+└─ README.md
+
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+---
+
+### Install Dependencies
+
+```bash
+npm install
+
 ```
 
-## Developing
+### **Run the Dev Server**
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+`npm run dev`
 
-```sh
-npm run dev
+By default, the app runs on:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+`http://localhost:5173`
 
-## Building
+If running inside Docker, ensure the port is published to the host.
 
-To create a production version of your app:
+---
 
-```sh
-npm run build
-```
+## **Tailwind Setup Notes**
 
-You can preview the production build with `npm run preview`.
+* Global styles are defined in:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+`src/routes/layout.css`
+
+`@tailwind base;`  
+`@tailwind components;`  
+`@tailwind utilities;`
+
+* The file is imported in `+layout.svelte`.
+
+* PostCSS uses the Tailwind v4 plugin:
+
+`// postcss.config.cjs`  
+`module.exports = {`  
+  `plugins: [`  
+    `require('@tailwindcss/postcss'),`  
+    `require('autoprefixer')`  
+  `]`  
+`};`
+
+---
+
+## **Docker Notes (Optional)**
+
+When running inside Docker:
+
+* Publish the dev port (`5173`) to the host
+
+* Bind-mount the project directory so changes persist
+
+* Use `--host` if needed:
+
+`npm run dev -- --host`
+
+---
+
+## **Roadmap**
+
+* Flashcard engine
+
+* Deck management
+
+* HSK word lists
+
+* Progress tracking
+
+* Offline-first support
+
+* Mobile optimizations
+
+---
+
+## **License**
+
+MIT (or TBD)
+
+---
+
+## **Disclaimer**
+
+This project is under active development.  
+ Expect breaking changes until the core flashcard flow stabilizes.
+
