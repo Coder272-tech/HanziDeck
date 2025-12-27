@@ -1,3 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  /* Optional: Customize your theme here */
+  --font-sans: 'Inter', sans-serif;
+}
