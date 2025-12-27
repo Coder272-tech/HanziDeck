@@ -36,8 +36,10 @@
 }
 
 
+
+
 	function playAudio() {
-	  const src = vocab[currentIndex].audio;
+	  const src = shuffledVocab[currentIndex]?.audio;
 	  if (!src) return;
 
 	  if (!audio || audio.src !== location.origin + src) {
@@ -46,13 +48,15 @@
 
 	  audio.currentTime = 0;
 	  audio.play();
-}
+	}
+
 
   function generateOptions(stage) {
     let correct = stage === 1 ? shuffledVocab[currentIndex].pinyin : shuffledVocab[currentIndex].meaning;
     let choices = [correct];
 
-    while (choices.length < 4) {
+   // while (choices.length < 4) {
+	while (choices.length < 4 && choices.length < shuffledVocab.length) {
       let candidate = stage === 1
         ? shuffledVocab[Math.floor(Math.random() * shuffledVocab.length)].pinyin
         : shuffledVocab[Math.floor(Math.random() * shuffledVocab.length)].meaning;
@@ -101,38 +105,48 @@
 	  generateOptions(1);
   });
   
-  afterUpdate(() => {
-  const src = shuffledVocab[currentIndex].audio;
-  if (src) {
-    audio = new Audio(src);
-  }
-});
+
+
+	afterUpdate(() => {
+	  const card = shuffledVocab[currentIndex];
+	  if (!card?.audio) return;
+
+	  audio = new Audio(card.audio);
+	});
+
+
 </script>
 
 <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
   <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md text-center">
-    <div class="relative text-5xl font-bold mb-6 flex items-center justify-center gap-4">
-	<span>{shuffledVocab[currentIndex].hanzi}</span>
-	
-	<button
-    on:click={playAudio}
-    class="text-3xl hover:scale-110 transition"
-    aria-label="Play pronunciation">
-    🔊
-  </button>
-	
-	
-	</div>
-    
-    <div class="grid grid-cols-2 gap-4">
-      {#each options as opt}
-        <button 
-          class="bg-blue-200 hover:bg-blue-300 p-4 rounded text-lg font-medium"
-          on:click={() => selectOption(opt)}>
-          {opt}
-        </button>
-      {/each}
-    </div>
+  
+  
+{#if shuffledVocab[currentIndex]}
+  <div class="relative text-5xl font-bold mb-6 flex items-center justify-center gap-4">
+    <span>{shuffledVocab[currentIndex].hanzi}</span>
+
+    <button
+      on:click={playAudio}
+      class="text-3xl hover:scale-110 transition"
+      aria-label="Play pronunciation"
+    >
+      🔊
+    </button>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4">
+    {#each options as opt}
+      <button 
+        class="bg-blue-200 hover:bg-blue-300 p-4 rounded text-lg font-medium"
+        on:click={() => selectOption(opt)}>
+        {opt}
+      </button>
+    {/each}
+  </div>
+{:else}
+  <div class="text-gray-400">Loading cards…</div>
+{/if}
+
 
     {#if feedback}
       <div class="mt-4 text-3xl">{feedback}</div>
