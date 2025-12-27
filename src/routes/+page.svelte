@@ -21,6 +21,7 @@
   let right = 0;
   let wrong = 0;
   let feedback = '';
+  let shuffledVocab = [];
 
   let options = [];
 
@@ -73,7 +74,10 @@
     generateOptions(1);
   }
 
-  onMount(() => generateOptions(1));
+  onMount(() => {
+  shuffledVocab = shuffle([...vocab]);
+  generateOptions(1);
+  });
 </script>
 
 <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
