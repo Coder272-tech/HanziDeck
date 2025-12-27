@@ -1,7 +1,9 @@
 <script>
   import { onMount } from 'svelte';
+  import vocab from '$lib/data/vocab.json';
 
   // Vocab data
+  /*
   const vocab = [
     { hanzi: '爱', pinyin: 'ài', meaning: 'to love; affection; to be fond of; to like' },
     { hanzi: '八', pinyin: 'bā', meaning: 'eight; 8' },
@@ -12,6 +14,7 @@
     { hanzi: '电脑', pinyin: 'diàn nǎo', meaning: 'computer' },
     { hanzi: '喜欢', pinyin: 'xǐ huan', meaning: 'to like; to be fond of' }
   ];
+  */
 
   let currentIndex = 0;
   let questionStage = 1; // 1: choose pinyin, 2: choose meaning
