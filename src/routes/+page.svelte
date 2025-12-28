@@ -24,6 +24,8 @@
   let feedback = '';
   let shuffledVocab = [];
   let audio;
+  const TOTAL_QUESTIONS = 15;
+
 
   let options = [];
 
@@ -88,12 +90,14 @@
     feedback = '';
     questionStage = 1;
     currentIndex++;
-    if (currentIndex >= 10) {
-      alert(`You got ${right} right and ${wrong} wrong out of 10!`);
-      right = 0;
-      wrong = 0;
-      currentIndex = 0;
-    }
+	
+	if (currentIndex >= TOTAL_QUESTIONS) {
+	  alert(`You got ${right} right and ${wrong} wrong out of ${TOTAL_QUESTIONS}!`);
+	  right = 0;
+	  wrong = 0;
+	  currentIndex = 0;
+	}
+
     generateOptions(1);
   }
 
@@ -153,7 +157,8 @@
     {/if}
     
     <div class="mt-6 text-gray-700">
-      Progress: {currentIndex + 1}/10 | ✅ {right} | ❌ {wrong}
+	  Progress: {currentIndex + 1}/{TOTAL_QUESTIONS} | ✅ {right} | ❌ {wrong}
+
     </div>
   </div>
 </div>
