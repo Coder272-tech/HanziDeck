@@ -1,15 +1,80 @@
 [
-  { "hanzi": "叩", "pinyin": "kòu", "meaning": "to knock; to strike (ritual action)", "audio": "/audio/叩.mp3" },
-  { "hanzi": "齒", "pinyin": "chǐ", "meaning": "teeth", "audio": "/audio/齒.mp3" },
-  { "hanzi": "三", "pinyin": "sān", "meaning": "three", "audio": "/audio/三.mp3" },
-  { "hanzi": "通", "pinyin": "tōng", "meaning": "to pass through; a repetition or cycle", "audio": "/audio/通.mp3" },
-  { "hanzi": "稽", "pinyin": "jī", "meaning": "to bow; to examine; ritual prostration", "audio": "/audio/稽.mp3" },
-  { "hanzi": "首", "pinyin": "shǒu", "meaning": "head; first", "audio": "/audio/首.mp3" },
-  { "hanzi": "頭", "pinyin": "tóu", "meaning": "head", "audio": "/audio/頭.mp3" },
-  { "hanzi": "呼", "pinyin": "hū", "meaning": "to call; to invoke", "audio": "/audio/呼.mp3" },
-  { "hanzi": "六", "pinyin": "liù", "meaning": "six", "audio": "/audio/六.mp3" },
-  { "hanzi": "甲", "pinyin": "jiǎ", "meaning": "first heavenly stem; armor", "audio": "/audio/甲.mp3" },
-  { "hanzi": "神", "pinyin": "shén", "meaning": "spirit; deity", "audio": "/audio/神.mp3" },
-  { "hanzi": "名", "pinyin": "míng", "meaning": "name", "audio": "/audio/名.mp3" },
-  { "hanzi": "云", "pinyin": "yún", "meaning": "to say; it is said (classical usage)", "audio": "/audio/云.mp3" }
+  {
+    "hanzi": "太",
+    "pinyin": "tài",
+    "meaning": "supreme; utmost; great beyond measure (as in 太極, the Supreme Ultimate)",
+    "audio": "/audio/太.mp3"
+  },
+  {
+    "hanzi": "上",
+    "pinyin": "shàng",
+    "meaning": "above; higher; supreme; venerable (honorific usage for transcendent beings or texts)",
+    "audio": "/audio/上.mp3"
+  },
+  {
+    "hanzi": "長",
+    "pinyin": "cháng",
+    "meaning": "long; enduring; extended in time or substance (often implying continuity or profundity)",
+    "audio": "/audio/長.mp3"
+  },
+  {
+    "hanzi": "文",
+    "pinyin": "wén",
+    "meaning": "pattern; script; sacred text; ordered expression of Dao",
+    "audio": "/audio/文.mp3"
+  },
+  {
+    "hanzi": "大",
+    "pinyin": "dà",
+    "meaning": "great; vast; all-encompassing (cosmic or ontological sense)",
+    "audio": "/audio/大.mp3"
+  },
+  {
+    "hanzi": "洞",
+    "pinyin": "dòng",
+    "meaning": "penetrating; thorough; cavernous (as in 大洞, indicating complete spiritual penetration)",
+    "audio": "/audio/洞.mp3"
+  },
+  {
+    "hanzi": "靈",
+    "pinyin": "líng",
+    "meaning": "numinous; efficacious; spiritually responsive",
+    "audio": "/audio/靈.mp3"
+  },
+  {
+    "hanzi": "寶",
+    "pinyin": "bǎo",
+    "meaning": "treasure; precious essence (often referring to sacred teachings or vital substances)",
+    "audio": "/audio/寶.mp3"
+  },
+  {
+    "hanzi": "幽",
+    "pinyin": "yōu",
+    "meaning": "hidden; subtle; profound and unseen (realm beyond sensory perception)",
+    "audio": "/audio/幽.mp3"
+  },
+  {
+    "hanzi": "玄",
+    "pinyin": "xuán",
+    "meaning": "mysterious; darkly profound; source beyond form (Daoist metaphysical term)",
+    "audio": "/audio/玄.mp3"
+  },
+  {
+    "hanzi": "品",
+    "pinyin": "pǐn",
+    "meaning": "rank; grade; classification (of scriptures, beings, or realizations)",
+    "audio": "/audio/品.mp3"
+  },
+  {
+    "hanzi": "妙",
+    "pinyin": "miào",
+    "meaning": "wondrous; subtle beyond articulation; marvelously efficacious",
+    "audio": "/audio/妙.mp3"
+  },
+  {
+    "hanzi": "經",
+    "pinyin": "jīng",
+    "meaning": "classic; scripture; authoritative thread that orders meaning",
+    "audio": "/audio/經.mp3"
+  }
 ]
