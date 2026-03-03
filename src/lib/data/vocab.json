@@ -1,80 +1,33 @@
 [
-  {
-    "hanzi": "太",
-    "pinyin": "tài",
-    "meaning": "supreme; utmost; great beyond measure (as in 太極, the Supreme Ultimate)",
-    "audio": "/audio/太.mp3"
-  },
-  {
-    "hanzi": "上",
-    "pinyin": "shàng",
-    "meaning": "above; higher; supreme; venerable (honorific usage for transcendent beings or texts)",
-    "audio": "/audio/上.mp3"
-  },
-  {
-    "hanzi": "長",
-    "pinyin": "cháng",
-    "meaning": "long; enduring; extended in time or substance (often implying continuity or profundity)",
-    "audio": "/audio/長.mp3"
-  },
-  {
-    "hanzi": "文",
-    "pinyin": "wén",
-    "meaning": "pattern; script; sacred text; ordered expression of Dao",
-    "audio": "/audio/文.mp3"
-  },
-  {
-    "hanzi": "大",
-    "pinyin": "dà",
-    "meaning": "great; vast; all-encompassing (cosmic or ontological sense)",
-    "audio": "/audio/大.mp3"
-  },
-  {
-    "hanzi": "洞",
-    "pinyin": "dòng",
-    "meaning": "penetrating; thorough; cavernous (as in 大洞, indicating complete spiritual penetration)",
-    "audio": "/audio/洞.mp3"
-  },
-  {
-    "hanzi": "靈",
-    "pinyin": "líng",
-    "meaning": "numinous; efficacious; spiritually responsive",
-    "audio": "/audio/靈.mp3"
-  },
-  {
-    "hanzi": "寶",
-    "pinyin": "bǎo",
-    "meaning": "treasure; precious essence (often referring to sacred teachings or vital substances)",
-    "audio": "/audio/寶.mp3"
-  },
-  {
-    "hanzi": "幽",
-    "pinyin": "yōu",
-    "meaning": "hidden; subtle; profound and unseen (realm beyond sensory perception)",
-    "audio": "/audio/幽.mp3"
-  },
-  {
-    "hanzi": "玄",
-    "pinyin": "xuán",
-    "meaning": "mysterious; darkly profound; source beyond form (Daoist metaphysical term)",
-    "audio": "/audio/玄.mp3"
-  },
-  {
-    "hanzi": "品",
-    "pinyin": "pǐn",
-    "meaning": "rank; grade; classification (of scriptures, beings, or realizations)",
-    "audio": "/audio/品.mp3"
-  },
-  {
-    "hanzi": "妙",
-    "pinyin": "miào",
-    "meaning": "wondrous; subtle beyond articulation; marvelously efficacious",
-    "audio": "/audio/妙.mp3"
-  },
-  {
-    "hanzi": "經",
-    "pinyin": "jīng",
-    "meaning": "classic; scripture; authoritative thread that orders meaning",
-    "audio": "/audio/經.mp3"
-  }
+  { "hanzi": "天", "pinyin": "tiān", "meaning": "Heaven; the celestial realm; natural order", "audio": "/audio/天.mp3" },
+  { "hanzi": "上", "pinyin": "shàng", "meaning": "above; upper; celestial", "audio": "/audio/上.mp3" },
+  { "hanzi": "玄", "pinyin": "xuán", "meaning": "mysterious; profound; esoteric; Daoist mystery", "audio": "/audio/玄.mp3" },
+  { "hanzi": "靈", "pinyin": "líng", "meaning": "spirit; numinous power; efficacious presence", "audio": "/audio/靈.mp3" },
+  { "hanzi": "愛", "pinyin": "ài", "meaning": "to cherish; vital affection; binding force", "audio": "/audio/愛.mp3" },
+  { "hanzi": "自", "pinyin": "zì", "meaning": "self; spontaneous; from oneself", "audio": "/audio/自.mp3" },
+  { "hanzi": "生", "pinyin": "shēng", "meaning": "to generate; to give birth; life-force", "audio": "/audio/生.mp3" },
+
+  { "hanzi": "七", "pinyin": "qī", "meaning": "seven; sacred Daoist number (souls, apertures)", "audio": "/audio/七.mp3" },
+  { "hanzi": "思", "pinyin": "sī", "meaning": "thought; intention; focused contemplation", "audio": "/audio/思.mp3" },
+  { "hanzi": "召", "pinyin": "zhào", "meaning": "to summon; to invoke", "audio": "/audio/召.mp3" },
+  { "hanzi": "三", "pinyin": "sān", "meaning": "three; cosmic triad (Heaven–Earth–Human)", "audio": "/audio/三.mp3" },
+  { "hanzi": "現", "pinyin": "xiàn", "meaning": "to manifest; to appear", "audio": "/audio/現.mp3" },
+  { "hanzi": "隨", "pinyin": "suí", "meaning": "to follow; to accord with", "audio": "/audio/隨.mp3" },
+  { "hanzi": "迎", "pinyin": "yíng", "meaning": "to welcome; to receive ceremonially", "audio": "/audio/迎.mp3" },
+
+  { "hanzi": "代", "pinyin": "dài", "meaning": "to replace; to substitute; to act in place of", "audio": "/audio/代.mp3" },
+  { "hanzi": "予", "pinyin": "yǔ", "meaning": "me; to give; self-reference in ritual language", "audio": "/audio/予.mp3" },
+  { "hanzi": "之", "pinyin": "zhī", "meaning": "possessive or connective particle (of, it)", "audio": "/audio/之.mp3" },
+  { "hanzi": "形", "pinyin": "xíng", "meaning": "form; body; manifested shape", "audio": "/audio/形.mp3" },
+  { "hanzi": "物", "pinyin": "wù", "meaning": "thing; substance; material object", "audio": "/audio/物.mp3" },
+  { "hanzi": "化", "pinyin": "huà", "meaning": "to transform; alchemical change", "audio": "/audio/化.mp3" },
+
+  { "hanzi": "應", "pinyin": "yìng", "meaning": "to respond; resonance between realms", "audio": "/audio/應.mp3" },
+  { "hanzi": "而", "pinyin": "ér", "meaning": "and thus; linking particle", "audio": "/audio/而.mp3" },
+  { "hanzi": "成", "pinyin": "chéng", "meaning": "to complete; to accomplish; fruition", "audio": "/audio/成.mp3" },
+  { "hanzi": "熟", "pinyin": "shú", "meaning": "ripe; fully realized; perfected", "audio": "/audio/熟.mp3" },
+  { "hanzi": "急", "pinyin": "jí", "meaning": "swift; urgent; immediate", "audio": "/audio/急.mp3" },
+  { "hanzi": "如", "pinyin": "rú", "meaning": "as; in accordance with", "audio": "/audio/如.mp3" },
+  { "hanzi": "律", "pinyin": "lǜ", "meaning": "law; cosmic regulation; ritual command", "audio": "/audio/律.mp3" },
+  { "hanzi": "令", "pinyin": "lìng", "meaning": "command; decree; authoritative order", "audio": "/audio/令.mp3" }
 ]

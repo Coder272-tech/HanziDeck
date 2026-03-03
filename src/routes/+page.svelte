@@ -24,7 +24,7 @@
   let feedback = '';
   let shuffledVocab = [];
   let audio;
-  const TOTAL_QUESTIONS = 13;
+  const TOTAL_QUESTIONS = 31;
 
 
   let options = [];
