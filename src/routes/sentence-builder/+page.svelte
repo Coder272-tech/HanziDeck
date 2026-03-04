@@ -12,6 +12,20 @@
   onMount(() => {
     topVocab = vocab;
   });
+  
+  function loadPreset1() {
+  const presetString = "天上玄靈愛自生靈七思七召三";
+
+  // Split into individual characters
+  const chars = presetString.split('');
+
+  // Match characters to vocab entries
+  const matched = chars
+    .map(char => topVocab.find(v => v.hanzi === char))
+    .filter(Boolean); // remove any that weren't found
+
+  sentence = matched;
+}
 
   function handleDragStart(item, source, index = null) {
     dragItem = item;
@@ -131,5 +145,11 @@
     >
       Clear
     </button>
+	<button
+  on:click={loadPreset1}
+  class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded text-white font-bold"
+>
+  1
+</button>
   </div>
 </div>
