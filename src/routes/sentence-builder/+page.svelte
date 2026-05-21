@@ -14,7 +14,7 @@
   });
   
   function loadPreset1() {
-  const presetString = "天上玄靈愛自生靈七思七召三";
+  const presetString = "天上玄靈愛自生靈七思七召三現隨迎代予之形形隨物化應化而成熟急如律令";
 
   // Split into individual characters
   const chars = presetString.split('');
