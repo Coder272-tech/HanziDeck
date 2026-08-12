@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { base } from '$app/paths';
   import vocab from '$lib/data/vocab.json';
 
   let topVocab = [];
@@ -12,20 +13,27 @@
   onMount(() => {
     topVocab = vocab;
   });
-  
+
+  function getAudioUrl(src) {
+    if (!src) return null;
+
+    // vocab.json contains paths like /audio/天.mp3
+    // GitHub Pages needs /HanziDeck/audio/天.mp3
+    return `${base}${src}`;
+  }
+
   function loadPreset1() {
-  const presetString = "天上玄靈愛自生靈七思七召三現隨迎代予之形形隨物化應化而成熟急如律令";
+    const presetString =
+      '天上玄靈愛自生靈七思七召三現隨迎代予之形形隨物化應化而成熟急如律令';
 
-  // Split into individual characters
-  const chars = presetString.split('');
+    const chars = presetString.split('');
 
-  // Match characters to vocab entries
-  const matched = chars
-    .map(char => topVocab.find(v => v.hanzi === char))
-    .filter(Boolean); // remove any that weren't found
+    const matched = chars
+      .map(char => topVocab.find(v => v.hanzi === char))
+      .filter(Boolean);
 
-  sentence = matched;
-}
+    sentence = matched;
+  }
 
   function handleDragStart(item, source, index = null) {
     dragItem = item;
@@ -42,7 +50,6 @@
     }
 
     if (dragSource === 'bottom') {
-      // Reorder logic
       const updated = [...sentence];
       updated.splice(dragIndex, 1);
       updated.push(dragItem);
@@ -58,8 +65,10 @@
     if (dragSource !== 'bottom') return;
 
     const updated = [...sentence];
+
     updated.splice(dragIndex, 1);
     updated.splice(targetIndex, 0, dragItem);
+
     sentence = updated;
 
     dragItem = null;
@@ -68,19 +77,35 @@
   }
 
   function playAudio(src) {
-    if (!src) return;
-    const audio = new Audio(src);
-    audio.play();
+    const audioUrl = getAudioUrl(src);
+
+    if (!audioUrl) return;
+
+    const audio = new Audio(audioUrl);
+
+    audio.play().catch(error => {
+      console.error('Audio playback failed:', error);
+    });
   }
 
   async function playSentence() {
     for (const item of sentence) {
-      if (item.audio) {
-        const audio = new Audio(item.audio);
+      const audioUrl = getAudioUrl(item.audio);
+
+      if (!audioUrl) continue;
+
+      const audio = new Audio(audioUrl);
+
+      try {
         await audio.play();
+
         await new Promise(resolve => {
           audio.onended = resolve;
+          audio.onerror = resolve;
         });
+      } catch (error) {
+        console.error('Audio playback failed:', error);
+        break;
       }
     }
   }
@@ -132,6 +157,7 @@
 
   <!-- CONTROLS -->
   <div class="flex gap-4">
+
     <button
       on:click={playSentence}
       class="px-6 py-3 bg-purple-400 hover:bg-purple-500 rounded text-white font-bold"
@@ -145,11 +171,13 @@
     >
       Clear
     </button>
-	<button
-  on:click={loadPreset1}
-  class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded text-white font-bold"
->
-  1
-</button>
+
+    <button
+      on:click={loadPreset1}
+      class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded text-white font-bold"
+    >
+      1
+    </button>
+
   </div>
 </div>
