@@ -1,0 +1,1 @@
+import{o as a,h as o,d as e,q as c,v as u,i as f}from"./BO29mc2E.js";function s(n){e===null&&a(),u&&e.l!==null?t(e).m.push(n):o(()=>{const l=f(n);if(typeof l=="function")return l})}function r(n){e===null&&a(),e.l===null&&c(),t(e).a.push(n)}function t(n){var l=n.l;return l.u??={a:[],b:[],m:[]}}export{r as a,s as o};
