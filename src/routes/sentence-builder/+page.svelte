@@ -1,6 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import { base } from '$app/paths';
   import vocab from '$lib/data/vocab.json';
 
   let topVocab = [];
@@ -10,6 +9,9 @@
   let dragSource = null; // 'top' or 'bottom'
   let dragIndex = null;
 
+  // GitHub Pages repository base path
+  const BASE_PATH = '/HanziDeck';
+
   onMount(() => {
     topVocab = vocab;
   });
@@ -17,9 +19,12 @@
   function getAudioUrl(src) {
     if (!src) return null;
 
-    // vocab.json contains paths like /audio/天.mp3
-    // GitHub Pages needs /HanziDeck/audio/天.mp3
-    return `${base}${src}`;
+    // vocab.json contains paths like:
+    // /audio/天.mp3
+    //
+    // GitHub Pages needs:
+    // /HanziDeck/audio/天.mp3
+    return `${BASE_PATH}${src}`;
   }
 
   function loadPreset1() {
@@ -51,8 +56,10 @@
 
     if (dragSource === 'bottom') {
       const updated = [...sentence];
+
       updated.splice(dragIndex, 1);
       updated.push(dragItem);
+
       sentence = updated;
     }
 
@@ -81,6 +88,8 @@
 
     if (!audioUrl) return;
 
+    console.log('Playing audio:', audioUrl);
+
     const audio = new Audio(audioUrl);
 
     audio.play().catch(error => {
@@ -93,6 +102,8 @@
       const audioUrl = getAudioUrl(item.audio);
 
       if (!audioUrl) continue;
+
+      console.log('Playing sentence audio:', audioUrl);
 
       const audio = new Audio(audioUrl);
 
