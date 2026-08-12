@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { afterUpdate } from 'svelte';
   import vocab from '$lib/data/vocab.json';
+  import { base } from '$app/paths';
 
   // Vocab data
   /*
@@ -38,19 +39,24 @@
 }
 
 
+function getAudioUrl(src) {
+  if (!src) return null;
+  return `${base}${src}`;
+}
 
+function playAudio() {
+  const src = shuffledVocab[currentIndex]?.audio;
+  if (!src) return;
 
-	function playAudio() {
-	  const src = shuffledVocab[currentIndex]?.audio;
-	  if (!src) return;
+  const audioSrc = getAudioUrl(src);
 
-	  if (!audio || audio.src !== location.origin + src) {
-		audio = new Audio(src);
-	  }
+  if (!audio || audio.src !== new URL(audioSrc, window.location.origin).href) {
+    audio = new Audio(audioSrc);
+  }
 
-	  audio.currentTime = 0;
-	  audio.play();
-	}
+  audio.currentTime = 0;
+  audio.play();
+}
 
 
   function generateOptions(stage) {
@@ -111,12 +117,12 @@
   
 
 
-	afterUpdate(() => {
-	  const card = shuffledVocab[currentIndex];
-	  if (!card?.audio) return;
+afterUpdate(() => {
+  const card = shuffledVocab[currentIndex];
+  if (!card?.audio) return;
 
-	  audio = new Audio(card.audio);
-	});
+  audio = new Audio(getAudioUrl(card.audio));
+});
 
 
 </script>
